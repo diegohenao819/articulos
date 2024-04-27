@@ -1,0 +1,26 @@
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    justify-content: space-around;
+    font-size: large;
+}
+
+.navbar ul li {
+    cursor: pointer;
+    padding: 5px 15px;
+    border: 2px solid greenyellow;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: greenyellow;
+}
