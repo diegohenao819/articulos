@@ -31,7 +31,7 @@ const ArticulosPage = () => {
             );
         })
     ) : (
-        <h1> No articles </h1>
+        <h1> Loading... </h1>
     );
 };
 
