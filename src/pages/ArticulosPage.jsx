@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ArticuloCard from "../components/ArticuloCard";
 import Global from "../helpers/Global";
+import Spinner from "../components/Spinner";
 
 const ArticulosPage = () => {
     const [articulos, setArticulos] = useState([]);
@@ -31,7 +32,7 @@ const ArticulosPage = () => {
             );
         })
     ) : (
-        <h1> Loading... </h1>
+        <Spinner />
     );
 };
 
