@@ -17,10 +17,10 @@
 .navbar ul li {
     cursor: pointer;
     padding: 5px 15px;
-    border: 2px solid rgb(119, 12, 219);
+    border: 2px solid rgba(40, 17, 61, 0.604);
     border-radius: 5px;
 }
 
 .active {
-    background-color: rgb(23, 16, 220);
+    background-color: rgba(34, 31, 129, 0.647);
 }
