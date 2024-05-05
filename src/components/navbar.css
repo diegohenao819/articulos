@@ -17,7 +17,7 @@
 .navbar ul li {
     cursor: pointer;
     padding: 5px 15px;
-    border: 2px solid greenyellow;
+    border: 2px solid rgb(119, 12, 219);
     border-radius: 5px;
 }
 
