@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom"
+
+import ArticuloDetalles from "../components/ArticuloDetalles"
+import ArticulosPage from "./ArticulosPage"
 
 
 const Home = () => {
   return (
     <>
-      <div>Home</div>
-      <Link to="/articulos">
-        <button>Articulos</button>
-      </Link>
+      <ArticulosPage />
+      <ArticuloDetalles />
+
     </>
   )
 }

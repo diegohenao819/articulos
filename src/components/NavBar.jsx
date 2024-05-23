@@ -9,14 +9,20 @@ const NavBar = () => {
                         isPending ? "pending" : isActive ? "active" : ""
                     }
                     >Home</NavLink>
-                    <NavLink to="/articulos" className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
-                    }
-                    >Articulos</NavLink>
+
+
                     <NavLink to="/crear" className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "active" : ""
                     }
-                    >Crear</NavLink>
+                    >Crear Articulo</NavLink>
+
+
+              
+
+
+
+
+
                 </ul>
             </div>
             <Outlet />

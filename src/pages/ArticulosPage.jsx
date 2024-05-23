@@ -45,6 +45,7 @@ const ArticulosPage = () => {
     return articulos.length > 0 ? (
         articulos.map((articulo) => (
             <ArticuloCard
+                id={articulo._id}
                 key={articulo._id}
                 titulo={articulo.titulo}
                 contenido={articulo.contenido}

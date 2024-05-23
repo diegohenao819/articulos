@@ -1,39 +1,33 @@
 import "./crear.css";
 import { useState } from "react";
+import axios from 'axios';
 
 const Crear = () => {
   const [mensaje, setMensaje] = useState("");
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
-    const url = 'https://articulo-blog.vercel.app/api/crear';
-
-    // Remove the Content-Type header to let the browser set it automatically
-    // along with the correct boundary for multipart/form-data
-    const options = {
-      method: 'POST',
-      body: formData // Send the FormData object directly
-    };
-
-    fetch(url, options)
-      .then(response => {
-        if (!response.ok) {
-          setMensaje("Error creating article");
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('Backend response:', data);
-        setMensaje("Article created successfully");
-      })
-      .catch(error => {
-        console.error('Error during request:', error);
-        setMensaje("Failed to create article");
+    try {
+      const response = await axios.post('https://articulo-blog.vercel.app/api/crear', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
-  }
+
+      if (response.status !== 200) {
+        setMensaje("Error creating article");
+        throw new Error('Network response was not ok');
+      }
+
+      console.log('Backend response:', response.data);
+      setMensaje("Article created successfully");
+    } catch (error) {
+      console.error('Error during request:', error);
+      setMensaje("Failed to create article");
+    }
+  };
 
   return (
     <div className="crear">
@@ -54,7 +48,7 @@ const Crear = () => {
         <button type="submit">Create</button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default Crear;

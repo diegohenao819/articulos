@@ -5,6 +5,7 @@ import ArticulosPage from "./pages/ArticulosPage";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Crear from "./pages/Crear";
+import ArticuloDetalles from "./components/ArticuloDetalles"
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         path: "*",
         element: <NotFound />,
       },
+      {
+        path: "/articulos/:id",
+        element: <ArticuloDetalles />,
+      },
+      
     ],
   },
 ]);
