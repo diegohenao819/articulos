@@ -29,7 +29,7 @@ const ArticuloDetalles = () => {
                     const base64String = window.btoa(binaryString);
                     articulo.imageSrc = `data:${articulo.image.contentType};base64,${base64String}`;
                 } else {
-                    articulo.imageSrc = ""; // Puedes establecer esto a una imagen predeterminada o dejarlo vacío
+                    articulo.imageSrc = ""; 
                 }
 
                 setArticulo(articulo);

@@ -1,4 +1,3 @@
-import ArticuloDetalles from "../components/ArticuloDetalles";
 import ArticulosPage from "./ArticulosPage";
 
 const Home = () => {
@@ -9,7 +8,7 @@ const Home = () => {
       </h1>
 
       <ArticulosPage />
-      <ArticuloDetalles />
+
     </>
   );
 };

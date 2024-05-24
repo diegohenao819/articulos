@@ -13,7 +13,7 @@ const ArticuloCard = ({ id, titulo, contenido, fecha, photo, onDelete }) => {
     const handleDelete = async () => {
         try {
             await axios.delete(`https://articulo-blog.vercel.app/api/articulo/${id}`);
-            onDelete(); // Llamar a la función de eliminación del componente padre
+            onDelete(); 
             console.log(`Artículo con id ${id} eliminado`);
         } catch (error) {
             console.error("Error al eliminar el artículo:", error);

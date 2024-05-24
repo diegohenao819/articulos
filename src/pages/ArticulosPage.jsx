@@ -37,7 +37,7 @@ const ArticulosPage = () => {
                     } else {
                         return {
                             ...articulo,
-                            imageSrc: "", // You can set this to a default image or leave it empty
+                            imageSrc: "", 
                         };
                     }
                 });
