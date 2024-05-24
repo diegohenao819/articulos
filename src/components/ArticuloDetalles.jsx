@@ -56,7 +56,7 @@ const ArticuloDetalles = () => {
             <p><strong>fecha: </strong> {articulo.fecha}</p>
             {articulo.imageSrc ? <img src={articulo.imageSrc} alt={articulo.titulo}  /> :
             
-            <img src="https://clipartcraft.com/images/newspaper-clipart-article.png" alt={articulo.titulo}/>
+            <img src="https://th.bing.com/th/id/OIP.IeJW_BYnaLXx3q0Qvu21kAHaDX?rs=1&pid=ImgDetMain" alt={articulo.titulo}/>
         }
             
         </div>
