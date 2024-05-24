@@ -5,24 +5,23 @@ const NavBar = () => {
         <>
             <div className="navbar">
                 <ul>
-                    <NavLink to="/" className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
-                    }
-                    >Home</NavLink>
+                    <NavLink
+                        to="/"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Home
+                    </NavLink>
 
-
-                    <NavLink to="/crear" className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "active" : ""
-                    }
-                    >Crear Articulo</NavLink>
-
-
-              
-
-
-
-
-
+                    <NavLink
+                        to="/crear"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "active" : ""
+                        }
+                    >
+                        Crear Articulo
+                    </NavLink>
                 </ul>
             </div>
             <Outlet />

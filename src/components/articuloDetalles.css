@@ -1,4 +1,4 @@
-.articuloDetalles{
+.articuloDetalles {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,11 +9,11 @@
     max-width: 1200px;
 }
 
-.articuloDetalles img{
+.articuloDetalles img {
     width: 300px;
 }
 
-strong{
+strong {
     font-size: 1.5rem;
     font-weight: 700;
     color: #333;

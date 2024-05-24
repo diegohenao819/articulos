@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ArticuloDetalles from "./components/ArticuloDetalles";
 import NavBar from "./components/NavBar";
 import "./general.css";
 import ArticulosPage from "./pages/ArticulosPage";
+import Crear from "./pages/Crear";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import Crear from "./pages/Crear";
-import ArticuloDetalles from "./components/ArticuloDetalles"
 
 const router = createBrowserRouter([
   {
@@ -31,7 +31,6 @@ const router = createBrowserRouter([
         path: "/articulos/:id",
         element: <ArticuloDetalles />,
       },
-      
     ],
   },
 ]);

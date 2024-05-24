@@ -1,8 +1,8 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import ArticuloCard from "../components/ArticuloCard";
 import Spinner from "../components/Spinner";
 import Global from "../helpers/Global";
-import axios from "axios";
 
 const ArticulosPage = () => {
     const [articulos, setArticulos] = useState([]);
@@ -19,19 +19,25 @@ const ArticulosPage = () => {
             const result = await response.json();
 
             if (result.status === "success") {
-                const updatedArticulos = result.articulos.map(articulo => {
-                    if (articulo.image && articulo.image.data && articulo.image.data.data) {
-                        const binaryString = new Uint8Array(articulo.image.data.data).reduce((acc, byte) => acc + String.fromCharCode(byte), '');
+                const updatedArticulos = result.articulos.map((articulo) => {
+                    if (
+                        articulo.image &&
+                        articulo.image.data &&
+                        articulo.image.data.data
+                    ) {
+                        const binaryString = new Uint8Array(
+                            articulo.image.data.data
+                        ).reduce((acc, byte) => acc + String.fromCharCode(byte), "");
                         const base64String = window.btoa(binaryString);
                         const imageSrc = `data:${articulo.image.contentType};base64,${base64String}`;
                         return {
                             ...articulo,
-                            imageSrc
+                            imageSrc,
                         };
                     } else {
                         return {
                             ...articulo,
-                            imageSrc: '' // You can set this to a default image or leave it empty
+                            imageSrc: "", // You can set this to a default image or leave it empty
                         };
                     }
                 });
@@ -47,7 +53,7 @@ const ArticulosPage = () => {
     const handleDeleteArticulo = async (id) => {
         try {
             await axios.delete(`${Global.url}articulo/${id}`);
-            setArticulos(articulos.filter(articulo => articulo._id !== id));
+            setArticulos(articulos.filter((articulo) => articulo._id !== id));
         } catch (error) {
             setError(error);
         }
