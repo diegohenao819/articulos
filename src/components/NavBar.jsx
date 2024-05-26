@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./navbar.css";
+import { Button } from "@mui/material";
 const NavBar = () => {
     return (
         <>
@@ -11,7 +12,7 @@ const NavBar = () => {
                             isPending ? "pending" : isActive ? "active" : ""
                         }
                     >
-                        Home
+                       HOME
                     </NavLink>
 
                     <NavLink
@@ -20,7 +21,7 @@ const NavBar = () => {
                             isPending ? "pending" : isActive ? "active" : ""
                         }
                     >
-                        Crear Articulo
+                        CREATE ARTICLE
                     </NavLink>
                 </ul>
             </div>

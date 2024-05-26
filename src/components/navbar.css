@@ -26,11 +26,13 @@
 .navbar ul a{
     color: white;
     text-decoration: none;
+    padding: 10px;
 
 }
 
 .active {
-    background-color: rgb(147, 12, 17);
+    background-color: hsl(45, 100%, 51%);
+    font-size: large;
 }
 
 

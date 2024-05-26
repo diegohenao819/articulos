@@ -5,18 +5,22 @@
     border-radius: 0.3rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 50%;
+    margin-top: 2rem;
 }
+
 
 .jumbo h1 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #333;
+    margin-top: 1rem;
 }
 
 .jumbo p {
     font-size: 1.2rem;
     font-weight: 400;
     color: #333;
+    margin-bottom: 2rem;
 }
 
 .jumbo a {
@@ -29,4 +33,12 @@
     width: 200px;
     height: 100px;
     border-radius: 0.3rem;
+}
+
+.jumbo button{
+    margin-top: 2rem;
+}
+
+.jumbo .button-eliminar{
+    margin-left: 1rem;
 }

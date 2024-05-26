@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
 
 import "./articuloDetalles.css";
 
@@ -52,20 +53,33 @@ const ArticuloDetalles = () => {
         return <div>Error al cargar el artículo: {error.message}</div>;
     }
 
-    return (
-        <div className="articuloDetalles">
-            <h2>DETALLES</h2>
 
-            <h1>
-                <strong>Titulo </strong> {articulo.titulo}
-            </h1>
-            <p>
-                {" "}
-                <strong>Contenido: </strong> {articulo.contenido}
-            </p>
-            <p>
-                <strong>fecha: </strong> {articulo.fecha}
-            </p>
+    const formatDate = (isoString) => {
+        const date = new Date(isoString);
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            timeZoneName: 'short',
+        };
+        return date.toLocaleDateString(undefined, options);
+    };
+
+    return (
+        <Box className="articuloDetalles">
+            <Typography variant="h2" color="primary" style={{marginBottom: "15px"}}>DETALLES</Typography>
+
+            <div>
+                <Typography variant="h3" style={{marginBottom: "15px"}}>  {articulo.titulo}</Typography>
+            </div>
+            <Typography variant="body1" style={{marginBottom: "15px"}}>
+                
+                {articulo.contenido}
+            </Typography>
+            <Typography variant="caption" style={{marginBottom: "15px"}}>{formatDate(articulo.fecha)}</Typography>
             {articulo.imageSrc ? (
                 <img src={articulo.imageSrc} alt={articulo.titulo} />
             ) : (
@@ -74,7 +88,7 @@ const ArticuloDetalles = () => {
                     alt={articulo.titulo}
                 />
             )}
-        </div>
+        </Box>
     );
 };
 

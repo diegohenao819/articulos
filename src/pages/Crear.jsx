@@ -1,6 +1,7 @@
 import "./crear.css";
 import { useState } from "react";
 import axios from 'axios';
+import { Typography,  Button } from '@mui/material';
 
 const Crear = () => {
   const [mensaje, setMensaje] = useState("");
@@ -32,20 +33,20 @@ const Crear = () => {
   return (
     <div className="crear">
       <strong>{mensaje}</strong>
-      <h1>Create an Article</h1>
-      <p>Form to create an article</p>
+      <Typography variant="h3">Create an Article</Typography>
+      <Typography variant="body1">Form to create an article</Typography>
 
       <form onSubmit={submitForm}>
-        <label htmlFor="titulo">Title</label>
-        <input type="text" id="titulo" name="titulo" />
+        <Typography component="label" htmlFor="titulo">TITLE</Typography>
+        <input type="text" id="titulo" name="titulo" placeholder="Write your title here"/>
 
-        <label htmlFor="contenido">Content</label>
-        <textarea id="contenido" name="contenido"></textarea>
+        <Typography component="label" htmlFor="contenido">CONTENT</Typography>
+        <textarea id="contenido" name="contenido" placeholder="Your content here"></textarea>
 
-        <label htmlFor="file0">Image</label>
+        <Typography component="label" htmlFor="file0">IMAGE</Typography>
         <input type="file" id="file0" name="file0" />
 
-        <button type="submit">Create</button>
+        <Button variant="contained" color="primary" type="submit">Create</Button>
       </form>
     </div>
   );

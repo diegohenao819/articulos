@@ -24,4 +24,20 @@ form label,
 form input {
     display: flex;
     align-content: flex-start;
+    padding: 10px;
+    border: 0;
+
 }
+
+form input[type="text"]{
+    background-color: hsl(0, 0%, 95%);
+}
+form textarea{
+    background-color: hsl(0, 0%, 95%);
+    border: 0;
+    outline: 0;
+    field-sizing: content; 
+    min-height: 60px;
+    
+}
+

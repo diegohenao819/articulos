@@ -1,3 +1,5 @@
+import { Typography } from '@mui/material';
+import Button from '@mui/material/Button';
 import axios from "axios";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +8,23 @@ import "./articuloCard.css";
 const ArticuloCard = ({ id, titulo, contenido, fecha, photo, onDelete }) => {
     const navigate = useNavigate();
 
+
+
+    const formatDate = (isoString) => {
+        const date = new Date(isoString);
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            timeZoneName: 'short',
+        };
+        return date.toLocaleDateString(undefined, options);
+    };
+
+
     const handleReadMore = () => {
         navigate(`/articulos/${id}`);
     };
@@ -13,7 +32,7 @@ const ArticuloCard = ({ id, titulo, contenido, fecha, photo, onDelete }) => {
     const handleDelete = async () => {
         try {
             await axios.delete(`https://articulo-blog.vercel.app/api/articulo/${id}`);
-            onDelete(); 
+            onDelete();
             console.log(`Artículo con id ${id} eliminado`);
         } catch (error) {
             console.error("Error al eliminar el artículo:", error);
@@ -30,12 +49,22 @@ const ArticuloCard = ({ id, titulo, contenido, fecha, photo, onDelete }) => {
                 }
                 alt=""
             />
-            <h2>{titulo}</h2>
-            <p>{contenido}</p>
-            <p>{fecha}</p>
-            <p>{id}</p>
-            <button onClick={handleReadMore}>Read more</button>
-            <button onClick={handleDelete}>Eliminar</button>
+            <Typography variant="h1" sx={{
+                color: 'primary',  // Using a theme color
+                fontSize: '2.5rem',     // Custom font size
+                fontWeight: 'bold',     // Custom font weight
+                marginBottom: '1rem',   // Custom margin
+
+                textTransform: 'uppercase', // Uppercase text
+            }}>{titulo}</Typography>
+
+            <Typography variant="body1" color="secondary" >{contenido}</Typography>
+            <Typography variant="caption">{formatDate(fecha)}</Typography>
+            <br />
+            <Typography variant='caption'>{id}</Typography>
+            <br />
+            <Button variant="contained" color="primary" onClick={handleReadMore}>Read more</Button>
+            <Button variant="contained" color="error" onClick={handleDelete} className='button-eliminar'>Eliminar</Button>
         </div>
     );
 };
