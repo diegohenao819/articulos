@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Box, Typography } from "@mui/material";
+import { NavLink, useParams } from "react-router-dom";
+import { Box, Typography, Button } from "@mui/material";
 
 import "./articuloDetalles.css";
 
@@ -70,7 +70,7 @@ const ArticuloDetalles = () => {
 
     return (
         <Box className="articuloDetalles">
-            <Typography variant="h2" color="primary" style={{marginBottom: "15px"}}>DETALLES</Typography>
+            <Typography variant="h2" color="primary" style={{marginBottom: "15px"}}>DETAILS</Typography>
 
             <div>
                 <Typography variant="h3" style={{marginBottom: "15px"}}>  {articulo.titulo}</Typography>
@@ -88,6 +88,10 @@ const ArticuloDetalles = () => {
                     alt={articulo.titulo}
                 />
             )}
+
+            <NavLink to="/">
+                <Button variant="contained" color="warning">List of Articles...</Button>
+            </NavLink>
         </Box>
     );
 };
